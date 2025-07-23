@@ -1,73 +1,38 @@
-# ===================================================================
-#  Java / Maven Projeleri için Genel .gitignore Dosyası
-# ===================================================================
-
-# Derleme çıktıları ve log dosyaları
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar.md5
-.mvn/wrapper/maven-wrapper.jar.sha1
-
-# Log dosyaları
-*.log
-hs_err_pid*
-
-# Maven sarmalayıcı (wrapper) JAR dosyasını İSTİSNA olarak tut.
-# Bu, başkalarının Maven kurmadan projeyi derlemesini sağlar.
-!/.mvn/wrapper/maven-wrapper.jar
-
-# ===================================================================
-#  IDE'ye Özel Ayar Dosyaları
-# ===================================================================
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-# Bu klasör kullanıcıya özel ayarları (pencere konumu, geçmiş vb.) içerir.
-# Paylaşılması proje açılışında hatalara neden olur.
-.idea/
-
-# IntelliJ'nin eski veya farklı proje yapılarında kullandığı dosyalar.
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
 *.iml
 *.ipr
-*.iws
-out/
-
-### VS Code ###
-.vscode/
 
 ### Eclipse ###
-.classpath
-.project
-.settings/
 .apt_generated
+.classpath
 .factorypath
+.project
+.settings
 .springBeans
 .sts4-cache
 
 ### NetBeans ###
-nbproject/private/
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# ===================================================================
-#  İşletim Sistemine Özel Dosyalar
-# ===================================================================
+### VS Code ###
+.vscode/
 
 ### Mac OS ###
 .DS_Store
-.AppleDouble
-.LSOverride
-
-### Windows ###
-Thumbs.db
-ehthumbs.db
-Desktop.ini
