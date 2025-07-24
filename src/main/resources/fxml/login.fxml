@@ -18,12 +18,12 @@
                <children>
                   <ImageView fitHeight="166.0" fitWidth="105.0" layoutX="18.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@de.png" />
+                        <Image url="@images/de.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="20.0" fitWidth="58.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@koc-seeklogo.png" />
+                        <Image url="@images/koc-seeklogo.png" />
                      </image>
                   </ImageView>
                </children>
