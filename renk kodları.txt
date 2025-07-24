@@ -1,0 +1,8 @@
+Renk Adı		HEX Kodu		Kullanım Alanı
+Koyu Mavi		#1B263B			Üst menü, yan panel, başlık çubuğu
+Çelik Gri		#2E3A59			Arka plan, buton kenarlıkları
+Beyaz			#FFFFFF			Yazı rengi, arka plan
+Açık Gri		#D9D9D9			Tablo zeminleri, kart arka planları
+Sarımsı Altın		#D4AF37			Vurgular (örneğin: uyarılar, önemli etiketler)
+Koyu Yeşil		#2C6E49			Başarılı işlemler, stok var etiketi
+Kırmızımsı Kahve	#9E2A2B			Hatalar, kritik azalan stok uyarısı
