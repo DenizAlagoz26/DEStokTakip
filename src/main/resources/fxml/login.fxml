@@ -10,7 +10,12 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="846.0" style="-fx-background-color: #2E3A59;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="658.0" prefWidth="846.0"
+            style="-fx-background-color: #2E3A59;"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.destoktakip.controller.LoginController">
    <children>
       <Pane layoutX="115.0" layoutY="163.0" prefHeight="207.0" prefWidth="168.0">
          <children>
@@ -30,10 +35,22 @@
             </Group>
          </children>
       </Pane>
+
       <Line endX="-100.0" endY="292.0" layoutX="409.0" layoutY="157.0" startX="-100.0" startY="-10.399993896484375" stroke="#ffffff4a" />
-      <TextField layoutX="390.0" layoutY="216.0" opacity="0.5" prefHeight="37.0" prefWidth="286.0" promptText="E-mail " style="-fx-background-color: #2E3A59; -fx-border-color: #D9D9D9;" />
-      <TextField layoutX="390.0" layoutY="279.0" opacity="0.5" prefHeight="37.0" prefWidth="286.0" promptText="Password" style="-fx-background-color: #2E3A59; -fx-border-color: #D9D9D9;" />
-      <Button layoutX="390.0" layoutY="345.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="286.0" style="-fx-background-color: #2C6E49;" text="CONNECTS" textAlignment="JUSTIFY" textFill="WHITE">
+
+      <TextField fx:id="emailField" layoutX="390.0" layoutY="216.0" opacity="0.5"
+                 prefHeight="37.0" prefWidth="286.0" promptText="E-mail"
+                 style="-fx-background-color: #2E3A59; -fx-border-color: #D9D9D9;" />
+
+      <TextField fx:id="passwordField" layoutX="390.0" layoutY="279.0" opacity="0.5"
+                 prefHeight="37.0" prefWidth="286.0" promptText="Password"
+                 style="-fx-background-color: #2E3A59; -fx-border-color: #D9D9D9;" />
+
+      <Button fx:id="loginButton" onAction="#handleLogin"
+              layoutX="390.0" layoutY="345.0" mnemonicParsing="false"
+              prefHeight="38.0" prefWidth="286.0"
+              style="-fx-background-color: #2C6E49;"
+              text="CONNECTS" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
