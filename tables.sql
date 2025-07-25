@@ -36,7 +36,7 @@ CREATE TABLE samples (
     s_tenor_ppm DECIMAL(10,2) NOT NULL,
     analysis_source VARCHAR(255),
     notes TEXT,
-    registered_by_user_id VARCHAR(100) NOT NULL,
+    registered_by_user_id INT (100) NOT NULL,
     FOREIGN KEY (location_id) REFERENCES locations(location_id),
     FOREIGN KEY (registered_by_user_id) REFERENCES users(user_id)
 );
@@ -68,7 +68,7 @@ CREATE TABLE stock_batches (
 CREATE TABLE stock_movements (
     movement_id INT AUTO_INCREMENT PRIMARY KEY,
     batch_id INT NOT NULL,
-    user_id VARCHAR(100) NOT NULL,
+    user_id INT (100) NOT NULL,
     movement_status ENUM('in', 'out', 'transfer') NOT NULL,
     quantity DECIMAL(10,2) NOT NULL,
     movement_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
