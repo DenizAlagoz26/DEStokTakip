@@ -20,6 +20,7 @@ module com.example.destoktakip {
     opens com.example.destoktakip.app to javafx.fxml;
     opens com.example.destoktakip.controller to javafx.fxml;
     opens com.example.destoktakip.model to org.hibernate.orm.core, javafx.fxml;
+    
 
     exports com.example.destoktakip.app;
     exports com.example.destoktakip.controller;
