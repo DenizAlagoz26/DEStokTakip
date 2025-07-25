@@ -1,10 +1,9 @@
 package com.example.destoktakip.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import java.sql.*;
-
-import com.example.destoktakip.util.DBUtil;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 
 public class LoginController {
 
@@ -12,10 +11,10 @@ public class LoginController {
     private TextField emailField;
 
     @FXML
-    private PasswordField passwordField;
+    private TextField passwordField;
 
     @FXML
-    private Label errorLabel;
+    private Button loginButton;
 
     @FXML
     private void handleLogin() {
@@ -23,27 +22,18 @@ public class LoginController {
         String password = passwordField.getText();
 
         if (email.isEmpty() || password.isEmpty()) {
-            errorLabel.setText("E-posta ve şifre zorunludur.");
-            return;
+            showAlert("Hata", "Lütfen e-posta ve şifre girin.");
+        } else {
+            // Giriş doğrulama işlemleri burada yapılabilir
+            showAlert("Başarılı", "Giriş başarılı!");
         }
+    }
 
-        try (Connection conn = DBUtil.getConnection()) {
-            String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, email);
-            stmt.setString(2, password);
-
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                errorLabel.setText("Giriş başarılı!");
-                // buraya ana sayfaya geçiş kodu gelir
-            } else {
-                errorLabel.setText("Geçersiz e-posta veya şifre.");
-            }
-
-        } catch (SQLException e) {
-            errorLabel.setText("Veritabanı hatası!");
-            e.printStackTrace();
-        }
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
