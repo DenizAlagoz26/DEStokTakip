@@ -31,6 +31,7 @@ Bu proje, Demir Export A.Ş.'de staj yapan aşağıdaki ekip üyeleri tarafında
   - JavaFX ile geliştirilmiş, sade ve anlaşılır ekranlar
 
 ## Kullanılan Teknolojiler
+- **Java**
 - **JavaFX** (UI)
 - **Hibernate** (ORM)
 - **MySQL** (Veritabanı)
