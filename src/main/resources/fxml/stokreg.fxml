@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1450.0" style="-fx-background-color: #2E3A59;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.destoktakip.controller.StokRegController">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="Numune Yönetim Ekranı" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+
+                <VBox spacing="15.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 10; -fx-padding: 20;">
+                    <children>
+                        <Label text="Yeni Numune Ekle / Güncelle" textFill="#2e3a59">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <FlowPane hgap="20.0" prefWrapLength="1350.0" vgap="15.0">
+                            <children>
+                                <ComboBox fx:id="isletmeComboBox" prefWidth="220.0" promptText="İşletme Seçin" />
+                                <ComboBox fx:id="projectComboBox" prefWidth="220.0" promptText="Proje Seçin" />
+                                <TextField fx:id="materialCode" prefWidth="220.0" promptText="Numune Kodu/Adı" />
+                                <DatePicker fx:id="entryDatePicker" prefWidth="220.0" promptText="Giriş Tarihi" />
+
+                                <!-- GÜNCELLEME: fx:id'ler düzeltildi ve editable kaldırıldı -->
+                                <ComboBox fx:id="cabinetComboBox" prefWidth="220.0" promptText="Dolap Seçin" />
+                                <ComboBox fx:id="shelfComboBox" prefWidth="220.0" promptText="Raf Seçin" />
+
+                                <TextField fx:id="weight" prefWidth="220.0" promptText="Ağırlığı (kg)" />
+                            </children>
+                        </FlowPane>
+                        <Separator prefWidth="200.0" />
+                        <HBox alignment="CENTER_LEFT" spacing="30.0">
+                            <padding>
+                                <Insets top="5.0" />
+                            </padding>
+                            <children>
+                                <Label text="Ek Bilgiler:" textFill="#2e3a59">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="unitSize" prefWidth="175.0" promptText="Tanecik Boyutu" />
+                                <TextField fx:id="oneKg" prefWidth="175.0" promptText="Hazır (1 kg) Adet" />
+                                <TextField fx:id="twoKg" prefWidth="175.0" promptText="Hazır (2 kg) Adet" />
+                                <TextArea fx:id="description" prefHeight="40.0" prefWidth="400.0" promptText="Açıklama" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                    <children>
+                        <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #2C6E49;" text="Kaydet" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClearForm" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #A9A9A9;" text="Formu Temizle" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 10 0 5 0;">
+                    <children>
+                        <Label text="Listede Ara:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" prefHeight="35.0" promptText="Numune kodu, proje, dolap veya rafa göre ara..." HBox.hgrow="ALWAYS" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </HBox>
+                <Separator prefWidth="200.0" />
+                <Label text="Numune Kayıt Listesi" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="materialTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="isletmeCol" prefWidth="120.0" text="İşletme" />
+                        <TableColumn fx:id="projectCol" prefWidth="150.0" text="Proje" />
+                        <TableColumn fx:id="materialCodeName" prefWidth="150.0" text="Numune Kodu/Adı" />
+                        <TableColumn fx:id="entryDateCol" prefWidth="100.0" text="Giriş Tarihi" />
+                        <TableColumn fx:id="cabinetCol" prefWidth="80.0" text="Dolap" />
+                        <TableColumn fx:id="shelfCol" prefWidth="60.0" text="Raf" />
+                        <TableColumn fx:id="weightCol" prefWidth="90.0" text="Ağırlık (kg)" />
+                        <TableColumn fx:id="unitSizeCol" prefWidth="105.0" text="Tanecik Boyutu" />
+                        <TableColumn fx:id="oneKgCol" prefWidth="118.0" text="Hazır (1 kg) Adet" />
+                        <TableColumn fx:id="twoKgCol" prefWidth="105.0" text="Hazır (2 kg) Adet" />
+                        <TableColumn fx:id="descriptionCol" prefWidth="180.0" text="Açıklama" />
+                        <TableColumn fx:id="importanceCol" prefWidth="120.0" text="Önem" />
+
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteSelected" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #D22B2B;" text="Seçili Kaydı Sil" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Button fx:id="homePage" layoutX="14.0" layoutY="14.0" onAction="#handleGoToDashboard" style="-fx-background-color: transparent; -fx-cursor: hand;">
+            <graphic>
+                <ImageView fitHeight="43.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/25694.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

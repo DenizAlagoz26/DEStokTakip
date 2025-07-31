@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="732.0" prefWidth="1014.0" style="-fx-background-color: #D9D9D9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.destoktakip.controller.UserLoginController">
+    <children>
+        <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="titleLabel" prefHeight="88.0" prefWidth="327.0" text="Kullanıcı Profili" textFill="#1b263b">
+                    <font>
+                        <Font name="System Bold" size="45.0" />
+                    </font>
+                </Label>
+
+                <HBox alignment="CENTER" spacing="50.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="481.0" prefWidth="411.0" spacing="10.0" style="-fx-background-color: #1b263b; -fx-background-radius: 5;">
+                            <children>
+                                <Label fx:id="nameSurname" alignment="CENTER" text="[Ad Soyad]" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="26.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="email" alignment="CENTER" text="[email@demirexport.com]" textFill="WHITE">
+                                    <font>
+                                        <Font size="27.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                  <Line endX="100.0" startX="102.29289245605469" startY="-463.2805480957031">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Line>
+
+                        <VBox prefHeight="400.0" prefWidth="388.0" spacing="15.0">
+                            <children>
+                                <PasswordField fx:id="oldPass" prefHeight="56.0" prefWidth="388.0" promptText="Eski Şifre">
+                           <font>
+                              <Font size="26.0" />
+                           </font></PasswordField>
+                                <PasswordField fx:id="newPass" prefHeight="56.0" prefWidth="388.0" promptText="Yeni Şifre">
+                           <font>
+                              <Font size="24.0" />
+                           </font></PasswordField>
+                                <PasswordField fx:id="newPass2" prefHeight="55.0" prefWidth="388.0" promptText="Yeni Şifre (Tekrar)">
+                           <font>
+                              <Font size="23.0" />
+                           </font></PasswordField>
+                                <Button fx:id="changeButton" alignment="CENTER" onAction="#handleChangePassword" prefHeight="51.0" prefWidth="238.0" style="-fx-background-color: #2C6E49;" text="Değiştir" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                           <VBox.margin>
+                              <Insets left="75.0" />
+                           </VBox.margin>
+                                </Button>
+                            </children>
+                     <padding>
+                        <Insets top="100.0" />
+                     </padding>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <Label fx:id="messageSuccess" alignment="CENTER" prefHeight="18.0" prefWidth="227.0" textFill="#2c6e49">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+
+        <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" onAction="#handleBackToDashboard" style="-fx-background-color: transparent; -fx-cursor: hand;">
+            <graphic>
+                <ImageView fitHeight="62.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/25694.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+    </children>
+</AnchorPane>

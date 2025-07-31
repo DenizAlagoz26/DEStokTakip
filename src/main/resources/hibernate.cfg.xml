@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- JDBC Ayarları -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/destoktakip_db?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">deniz123</property>
+
+        <!-- Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Diğer Ayarlar -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+
+        <!-- Entity Sınıfları -->
+
+        <mapping class="com.example.destoktakip.model.Sample"/>
+        <mapping class="com.example.destoktakip.model.StockBatch"/>
+        <mapping class="com.example.destoktakip.model.StockMovement"/>
+        <mapping class="com.example.destoktakip.model.ItemDefinition"/>
+        <mapping class="com.example.destoktakip.model.Category"/>
+        <mapping class="com.example.destoktakip.model.Location"/>
+        <mapping class="com.example.destoktakip.model.User"/>
+        <mapping class="com.example.destoktakip.model.Cabinet"/>
+        <mapping class="com.example.destoktakip.model.Isletme"/>
+        <mapping class="com.example.destoktakip.model.Project"/>
+        <mapping class="com.example.destoktakip.model.Shelf"/>
+        <mapping class="com.example.destoktakip.model.Material"/>
+
+
+
+
+
+    </session-factory>
+</hibernate-configuration>
