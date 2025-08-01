@@ -45,3 +45,51 @@ Ekip üyeleri:
 - Deniz Alagöz
 - İlayda Gündüz
 - Merve Nur Erdem
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# DEStokTakip
+
+## Project Description
+DEStokTakip is a desktop application developed as an internship project at Demir Export A.Ş., digitalizing stock and record operations of samples and materials in the mining laboratory.
+The project was prepared to facilitate the recording, tracking and management of sample and material stocks in mining and industrial enterprises.
+The system, which can be accessed with user and administrator roles, provides functions such as stock entry/exit operations, sample and material adding and listing, and user management.
+
+## Project Team
+This project was developed by the following team members who did their internship at Demir Export A.Ş.:
+
+- Deniz Alagöz
+- İlayda Gündüz
+- Merve Nur Erdem
+
+## Key Features
+- **User and Admin Panel:**
+  - Users can manage stock and material operations in their own panel.
+  - Admins can perform user addition/editing/deletion operations.
+- **Sample Management:**
+  - Sample addition, updating, deletion and listing
+  - Detailed fields such as project, enterprise, cabinet, shelf, weight, entry date
+- **Material Management:**
+  - Material addition, updating, deletion and listing
+  - Registration with cabinet, shelf, quantity, description information
+- **Stock Entry/Exit Tracking:**
+  - Recording and tracking of sample entry and exit movements
+- **Search and Filtering:**
+  - Quick search and filtering in sample and material lists
+- **Modern and User-Friendly Interface:**
+  - Clean and understandable screens developed with JavaFX
+
+## Technologies Used
+- **Java**
+- **JavaFX** (UI)
+- **Hibernate** (ORM)
+- **MySQL** (Database)
+- **Maven** (Project management)
+
+## Contributing
+This project was developed as an internship project for Demir Export A.Ş. mining laboratory.
+Team members:
+
+- Deniz Alagöz
+- İlayda Gündüz
+- Merve Nur Erdem
